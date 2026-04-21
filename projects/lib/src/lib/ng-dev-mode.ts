@@ -1,8 +1,3 @@
-/** @internal */
-declare global {
-  // Will be provided through Terser global definitions by Angular CLI during the
-  // production build. This is how Angular does tree-shaking internally.
-  const ngDevMode: boolean;
-}
-
+// Angular 19+ now declares ngDevMode in @angular/core types. Keep this file as
+// a no-op so existing imports still resolve, but rely on the official typing.
 export {};

@@ -15,8 +15,9 @@ import { AlphaChannel, ColorMode, OutputFormat } from './helpers';
 const NG_DEV_MODE = typeof ngDevMode === 'undefined' || !!ngDevMode;
 
 @Directive({
-  selector: '[colorPicker]',
-  exportAs: 'ngxColorPicker'
+    selector: '[colorPicker]',
+    exportAs: 'ngxColorPicker',
+    standalone: false
 })
 export class ColorPickerDirective implements OnChanges, OnDestroy {
   private dialog: any;

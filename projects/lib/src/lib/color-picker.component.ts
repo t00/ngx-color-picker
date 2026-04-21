@@ -12,9 +12,10 @@ import {
   NgZone,
   Inject,
   PLATFORM_ID,
+  DOCUMENT
 } from '@angular/core';
 
-import { DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 
 import { detectIE, calculateAutoPositioning } from './helpers';
 
@@ -28,10 +29,11 @@ import { ColorPickerService } from './color-picker.service';
 const SUPPORTS_TOUCH = typeof window !== 'undefined' && 'ontouchstart' in window;
 
 @Component({
-  selector: 'color-picker',
-  templateUrl: './color-picker.component.html',
-  styleUrls: [ './color-picker.component.css' ],
-  encapsulation: ViewEncapsulation.None
+    selector: 'color-picker',
+    templateUrl: './color-picker.component.html',
+    styleUrls: ['./color-picker.component.css'],
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class ColorPickerComponent implements OnInit, OnDestroy, AfterViewInit {
   private isIE10: boolean = false;
